@@ -9,20 +9,13 @@
                 "preset": "angular",
                 "releaseRules": [
                     {
-                        "type": "docs",
-                        "release": "patch"
-                    },
-                    {
-                        "type": "refactor",
-                        "release": "patch"
-                    },
-                    {
-                        "type": "build",
-                        "release": "patch"
+                        "scope": "/.skip ci/",
+                        "release": false
                     }
                 ],
                 "parserOpts": {
                     "noteKeywords": [
+                        "BREAKING",
                         "BREAKING CHANGE",
                         "BREAKING CHANGES"
                     ]
@@ -43,7 +36,8 @@
             {
                 "assets": [
                     "CHANGELOG.md"
-                ]
+                ],
+                "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ]
     ]
