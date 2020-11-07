@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/hamzahamidi/playground-npm/compare/v1.0.3...v1.0.4) (2020-11-07)
+
+
+### Performance Improvements
+
+* Add changelog ([76e565d](https://github.com/hamzahamidi/playground-npm/commit/76e565dc2b147f79499e004aabead00bf9991410))
+
 ## [1.0.3](https://github.com/hamzahamidi/playground-npm/compare/v1.0.2...v1.0.3) (2020-11-07)
 
 
