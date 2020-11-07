@@ -1,6 +1,6 @@
 {
   "name": "playground-npm",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A JavaScript API for handling cookies",
   "main": "cookies-utils.min.js",
   "module": "cookies-utils.min.js",
@@ -9,7 +9,6 @@
     "build:dev": "webpack --config=webpack.config.js",
     "coverage": "jest --collect-coverage",
     "test": "jest --watchAll",
-    "postpublish": "cp -r dist/package.json .",
     "semantic-release": "semantic-release"
   },
   "keywords": [
