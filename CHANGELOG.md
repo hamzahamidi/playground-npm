@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/hamzahamidi/playground-npm/compare/v1.0.0...v1.0.1) (2020-11-07)
+
+
+### Bug Fixes
+
+* semantic release ([596c8d0](https://github.com/hamzahamidi/playground-npm/commit/596c8d094cd8f1f654154f8df578db98cdd95124))
+
 # 1.0.0 (2020-11-07)
 
 
