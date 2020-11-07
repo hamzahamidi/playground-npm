@@ -9,11 +9,10 @@
         [
             "@semantic-release/npm",
             {
-                "tarballDir": "dist"
+                "pkgRoot": "dist"
             }
         ],
         "@semantic-release/github",
         "@semantic-release/git"
-    ],
-    "debug": true
+    ]
 }

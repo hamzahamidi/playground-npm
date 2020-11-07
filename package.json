@@ -8,7 +8,9 @@
     "build": "webpack --config=webpack.prod.js",
     "build:dev": "webpack --config=webpack.config.js",
     "coverage": "jest --collect-coverage",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "postpublish": "cp -r dist/package.json .",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "cookie",
@@ -49,6 +51,7 @@
     "copy-webpack-plugin": "^6.2.1",
     "eslint": "^7.12.1",
     "jest": "^26.6.1",
+    "semantic-release": "^17.2.2",
     "terser-webpack-plugin": "^5.0.3",
     "ts-jest": "^26.4.3",
     "ts-loader": "^8.0.7",

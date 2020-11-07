@@ -18,12 +18,10 @@ jobs:
           node-version: 12
       - name: Install dependencies
         run: npm ci
-      - name: Install @semantic-release dependencies
-        run: npm install -D @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git
       - name: Build packages
         run: npm run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npm run semantic-release
