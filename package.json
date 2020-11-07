@@ -9,6 +9,7 @@
     "build:dev": "webpack --config=webpack.config.js",
     "coverage": "jest --collect-coverage",
     "test": "jest --watchAll",
+    "prepublishOnly": "cp ../CHANGELOG.md .",
     "semantic-release": "semantic-release"
   },
   "keywords": [
