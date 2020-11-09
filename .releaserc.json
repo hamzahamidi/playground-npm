@@ -8,6 +8,10 @@
             {
                 "preset": "angular",
                 "releaseRules": [
+                    {   
+                        "breaking": true,
+                        "release": "major"
+                    },
                     {
                         "scope": "/.skip ci/",
                         "release": false
