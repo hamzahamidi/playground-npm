@@ -13,17 +13,7 @@
     "semantic-release": "semantic-release"
   },
   "keywords": [
-    "cookie",
-    "cookies",
-    "browser",
-    "umd",
-    "utils",
-    "cookies-utils",
-    "set cookie",
-    "delete cookie",
-    "delete all cookies",
-    "cookie exists",
-    "cookie has value"
+    "npm playground"
   ],
   "author": "Hamza HAMIDI",
   "license": "MIT",
