@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/hamzahamidi/playground-npm/compare/v3.2.1...v3.2.2) (2020-11-09)
+
+
+### Reverts
+
+* Revert "Revert "feat: Trigger minor release"" ([aa5e340](https://github.com/hamzahamidi/playground-npm/commit/aa5e34059c93714996109d1828ee3b3b54c73f34))
+
 ## [3.2.1](https://github.com/hamzahamidi/playground-npm/compare/v3.2.0...v3.2.1) (2020-11-09)
 
 
