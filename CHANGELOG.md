@@ -1,3 +1,10 @@
+# [3.0.0](https://github.com/hamzahamidi/playground-npm/compare/v2.0.0...v3.0.0) (2020-11-09)
+
+
+### Bug Fixes
+
+* Fix npm playground doc ([552ce77](https://github.com/hamzahamidi/playground-npm/commit/552ce77b6441c6153d86c2c6d5f9a8c7f8345e81))
+
 # [2.0.0](https://github.com/hamzahamidi/playground-npm/compare/v1.0.4...v2.0.0) (2020-11-09)
 
 
