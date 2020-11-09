@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/hamzahamidi/playground-npm/compare/v1.0.4...v2.0.0) (2020-11-09)
+
+
+### Build System
+
+* Update semantic-release config ([7cba9ba](https://github.com/hamzahamidi/playground-npm/commit/7cba9bab883fb8e961d4738dd17c6252a804d06e))
+
+
+### BREAKING CHANGES
+
+* Fix semantic-release
+
 ## [1.0.4](https://github.com/hamzahamidi/playground-npm/compare/v1.0.3...v1.0.4) (2020-11-07)
 
 
