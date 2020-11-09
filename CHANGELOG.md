@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/hamzahamidi/playground-npm/compare/v3.1.0...v3.2.0) (2020-11-09)
+
+
+### Features
+
+* Trigger minor release ([efcbd4c](https://github.com/hamzahamidi/playground-npm/commit/efcbd4c938649d2bfa66bdef675c1c3d5c1b1a86))
+
 # [3.1.0](https://github.com/hamzahamidi/playground-npm/compare/v3.0.0...v3.1.0) (2020-11-09)
 
 
