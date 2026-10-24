@@ -11,7 +11,9 @@ type cookie = {
 const expireTime = ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
 
 export function getCookieValue(name: string): string | undefined {
-    return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop();
+    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(String.raw`(^|;)\s*${escapedName}\s*=\s*([^;]+)`);
+    return pattern.exec(document.cookie)?.[2];
 }
 
 export function setCookie({ name, value, maxAge, expires, path, domain,secure,sameSite }: cookie): void {
@@ -42,13 +44,13 @@ export function setCookie({ name, value, maxAge, expires, path, domain,secure,sa
 
 export function cookieHasValue(name: string, value: string): boolean {
     return document.cookie.split(';')
-        .some(item => item.trim().indexOf(name + '=' + value.trim()) == 0
+        .some(item => item.trim().startsWith(name + '=' + value.trim())
         );
 }
 
 export function cookieExists(name: string): boolean {
     return document.cookie.split(';')
-        .some(item => item.trim().indexOf(name + '=') == 0
+        .some(item => item.trim().startsWith(name + '=')
         );
 }
 
@@ -64,10 +66,9 @@ export function deleteCookie(name: string, path?: string, domain?: string): void
 export function deleteAllCookies(): void {
     const cookies = document.cookie.split(';');
 
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i];
+    for (const cookie of cookies) {
         const eqPos = cookie.indexOf('=');
-        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        const name = eqPos > -1 ? cookie.slice(0, eqPos) : cookie;
         document.cookie = name + '=' + expireTime;
     }
 }

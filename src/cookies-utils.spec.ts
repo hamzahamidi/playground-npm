@@ -48,16 +48,12 @@ describe('Cookie utils', () => {
             setCookie({ name: 'cookie', value: 'delicious', secure: true });
             expect(document.cookie).toEqual('');
         });
-        it('set name, value, sameSite:none', () => {
-            setCookie({ name: 'cookie', value: 'delicious', sameSite: 'none' });
-            expect(document.cookie).toEqual('cookie=delicious');
-        });
-        it('set name, value, sameSite:lax', () => {
-            setCookie({ name: 'cookie', value: 'delicious', sameSite: 'lax' });
-            expect(document.cookie).toEqual('cookie=delicious');
-        });
-        it('set name, value, sameSite:strict', () => {
-            setCookie({ name: 'cookie', value: 'delicious', sameSite: 'lax' });
+        it.each([
+            ['none'],
+            ['lax'],
+            ['strict'],
+        ] as const)('set name, value, sameSite:%s', sameSite => {
+            setCookie({ name: 'cookie', value: 'delicious', sameSite });
             expect(document.cookie).toEqual('cookie=delicious');
         });
     });
@@ -69,32 +65,13 @@ describe('Cookie utils', () => {
             deleteCookie('name');
             expect(document.cookie).toEqual(cookie);
         });
-        it('should delete cookie if it exists', () => {
-            const cookie = 'username=John Doe';
-            document.cookie = cookie;
-            deleteCookie('username');
-            expect(document.cookie).toEqual('');
-        });
-        it('should delete cookie if it exists with expired date', () => {
-            const cookie = 'username=John Doe; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-            document.cookie = cookie;
-            deleteCookie('username');
-            expect(document.cookie).toEqual('');
-        });
-        it('should delete cookie if it exists with a maxage', () => {
-            const cookie = 'username=John Doe;max-age=31536000';
-            document.cookie = cookie;
-            deleteCookie('username');
-            expect(document.cookie).toEqual('');
-        });
-        it('should delete cookie if it exists with a path', () => {
-            const cookie = 'username=John Doe;path=/mydir';
-            document.cookie = cookie;
-            deleteCookie('username');
-            expect(document.cookie).toEqual('');
-        });
-        it('should delete cookie if it exists with a domain', () => {
-            const cookie = 'username=John Doe;domain=domain.example.com';
+        it.each([
+            ['without attributes', 'username=John Doe'],
+            ['with an expiry date', 'username=John Doe; expires=Fri, 31 Dec 9999 23:59:59 GMT'],
+            ['with a max age', 'username=John Doe;max-age=31536000'],
+            ['with a path', 'username=John Doe;path=/mydir'],
+            ['with a domain', 'username=John Doe;domain=domain.example.com'],
+        ])('should delete cookie if it exists %s', (_description, cookie) => {
             document.cookie = cookie;
             deleteCookie('username');
             expect(document.cookie).toEqual('');
