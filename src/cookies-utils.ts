@@ -11,7 +11,7 @@ type cookie = {
 const expireTime = ';expires=Thu, 01 Jan 1970 00:00:00 GMT';
 
 export function getCookieValue(name: string): string | undefined {
-    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
     const pattern = new RegExp(String.raw`(^|;)\s*${escapedName}\s*=\s*([^;]+)`);
     return pattern.exec(document.cookie)?.[2];
 }
